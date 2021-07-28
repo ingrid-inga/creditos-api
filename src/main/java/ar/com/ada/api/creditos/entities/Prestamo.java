@@ -9,9 +9,9 @@ import javax.persistence.*;
 @Table(name = "prestamo")
 public class Prestamo {
 
-    @Id //que es una PK.
-    @Column(name = "prestamo_id") //Nombre con el que se mapea a la base de datos.
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Autoincremental
+    @Id // que es una PK.
+    @Column(name = "prestamo_id") // Nombre con el que se mapea a la base de datos.
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Autoincremental
     private int prestamoId;
 
     @Temporal(TemporalType.DATE)
@@ -27,7 +27,7 @@ public class Prestamo {
     @Column(name = "estado_id")
     private int estadoId; // Por ahora vamos a crear este como int
 
-    @ManyToOne //join columns van donde esta FK
+    @ManyToOne // join columns van donde esta FK
     @JoinColumn(name = "cliente_id", referencedColumnName = "cliente_id")
     private Cliente cliente;
 
@@ -77,10 +77,10 @@ public class Prestamo {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-        this.cliente.agregarPrestamo(this);//relacion bidireccional.
+        this.cliente.agregarPrestamo(this);// relacion bidireccional.
     }
 
-    //ENUMERADO
+    // ENUMERADO
 
     public EstadoPrestamoEnum getEstadoId() {
 
@@ -91,7 +91,7 @@ public class Prestamo {
         this.estadoId = estadoId.getValue();
     }
 
-    //enumerado
+    // enumerado
     public enum EstadoPrestamoEnum {
         SOLICITADO(1), RECHAZADO(2), PENDIENTE_APROBACION(3), APROBADO(4), INCOBRABLE(5), CANCELADO(6),
         PREAPROBADO(100);

@@ -6,5 +6,4 @@ import ar.com.ada.api.creditos.entities.*;
 
 public interface PrestamoRepository extends JpaRepository<Prestamo, Integer> {
 
-
 }

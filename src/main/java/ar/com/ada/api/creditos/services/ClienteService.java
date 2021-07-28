@@ -14,12 +14,12 @@ public class ClienteService {
     @Autowired
     ClienteRepository repository;
 
-    public List<Cliente> traerTodos(){
+    public List<Cliente> traerTodos() {
         return repository.findAll();
 
     }
 
-    public void crearCliente(Cliente cliente){
+    public void crearCliente(Cliente cliente) {
         repository.save(cliente);
 
     }
